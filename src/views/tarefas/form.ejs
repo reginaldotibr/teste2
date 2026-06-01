@@ -1,0 +1,23 @@
+<%
+  const corpo = `
+    <h2>${ tarefa ? 'Editar Tarefa' : 'Nova Tarefa' }</h2>
+    <form method="POST" action="${ tarefa ? '/tarefas/' + tarefa.id + '/editar' : '/tarefas' }">
+      <label>Título</label>
+      <input type="text" name="titulo" value="${ tarefa ? tarefa.titulo : '' }" required>
+
+      <label>Descrição</label>
+      <textarea name="descricao" rows="4">${ tarefa ? tarefa.descricao || '' : '' }</textarea>
+
+      <label>Status</label>
+      <select name="status">
+        <option value="pendente"      ${ tarefa && tarefa.status === 'pendente'      ? 'selected' : '' }>Pendente</option>
+        <option value="em andamento"  ${ tarefa && tarefa.status === 'em andamento'  ? 'selected' : '' }>Em andamento</option>
+        <option value="concluida"     ${ tarefa && tarefa.status === 'concluida'     ? 'selected' : '' }>Concluída</option>
+      </select>
+
+      <button type="submit">${ tarefa ? 'Salvar alterações' : 'Criar Tarefa' }</button>
+      <a href="/tarefas" style="margin-left:12px; color:#555;">Cancelar</a>
+    </form>
+  `;
+  %>
+  <%- include('../layout', { titulo: tarefa ? 'Editar Tarefa' : 'Nova Tarefa', corpo, usuario }) %>

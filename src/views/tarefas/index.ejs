@@ -1,0 +1,28 @@
+<%
+  const corpo = `
+    <h2>Lista de Tarefas</h2>
+    <a href="/tarefas/nova" class="btn btn-novo">+ Nova Tarefa</a>
+    <table>
+      <tr>
+        <th>ID</th><th>Título</th><th>Status</th><th>Ações</th>
+      </tr>
+      ${ tarefas.length === 0
+        ? '<tr><td colspan="4" style="text-align:center">Nenhuma tarefa cadastrada.</td></tr>'
+        : tarefas.map(t => `
+          <tr>
+            <td>${t.id}</td>
+            <td>${t.titulo}</td>
+            <td><span class="badge-${t.status.replace(' ','-')}">${t.status}</span></td>
+            <td>
+              <a href="/tarefas/${t.id}/editar" class="btn btn-editar">Editar</a>
+              <form method="POST" action="/tarefas/${t.id}/excluir" style="display:inline">
+                <button class="btn btn-excluir" onclick="return confirm('Excluir esta tarefa?')">Excluir</button>
+              </form>
+            </td>
+          </tr>
+        `).join('')
+      }
+    </table>
+  `;
+  %>
+  <%- include('../layout', { titulo: 'Tarefas', corpo, usuario }) %>
