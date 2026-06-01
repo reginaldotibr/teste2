@@ -48,9 +48,10 @@ npm install prisma@^6 @prisma/client@^6
 npx prisma init
 ```
 
-Esse comando cria dois arquivos:
+Esse comando cria três arquivos:
 - `prisma/schema.prisma` — onde definimos os modelos do banco
 - `.env` — onde colocamos a URL de conexão com o banco
+- `prisma.config.ts` — configuração interna do Prisma, não precisa mexer
 
 ---
 
@@ -72,9 +73,9 @@ DATABASE_URL="mysql://USUARIO:SENHA@localhost:3306/NOME_DO_BANCO"
 
 ---
 
-## PASSO 6 — Criar o `.gitignore`
+## PASSO 6 — Verificar o `.gitignore`
 
-Crie o arquivo `.gitignore` na raiz:
+O `npx prisma init` já cria o `.gitignore` automaticamente com `node_modules` e `.env`. Verifique se o arquivo existe na raiz — se existir, não precisa fazer nada. Se não existir, crie com o conteúdo:
 
 ```
 node_modules
@@ -129,12 +130,6 @@ npx prisma migrate dev --name criar_tabelas_iniciais
 Esse comando cria as tabelas `usuarios` e `tarefas` no MySQL automaticamente.
 
 ---
-
-## PASSO 9 — Gerar o Prisma Client
-
-```bash
-npx prisma generate
-```
 
 ---
 
@@ -749,13 +744,15 @@ Acesse no navegador: `http://localhost:3000`
 
 ## PASSO 28 — Cadastrar o primeiro usuário
 
-Como ainda não há usuários, use o terminal para cadastrar via API:
+Como ainda não há usuários, use o terminal para cadastrar via API.
+
+No terminal do VS Code (PowerShell):
 
 ```bash
-curl -X POST http://localhost:3000/api/usuarios \
-  -H "Content-Type: application/json" \
-  -d "{\"nome\":\"Seu Nome\",\"email\":\"seu@email.com\",\"senha\":\"123456\"}"
+curl -X POST http://localhost:3000/api/usuarios -H "Content-Type: application/json" -d "{\"nome\":\"Seu Nome\",\"email\":\"seu@email.com\",\"senha\":\"123456\"}"
 ```
+
+Se der certo, o terminal mostra: `{"mensagem":"Usuário cadastrado!","id":1}`
 
 Depois acesse `http://localhost:3000/login` e faça login.
 
@@ -805,6 +802,7 @@ sistema-tarefas/
 ├── .env.example
 ├── .gitignore
 ├── package.json
+├── prisma.config.ts
 └── server.js
 ```
 
