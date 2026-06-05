@@ -792,7 +792,10 @@ Como ainda não há usuários, use o terminal para cadastrar via API.
 No terminal do VS Code (PowerShell):
 
 ```bash
-curl -X POST http://localhost:3000/api/usuarios -H "Content-Type: application/json" -d "{\"nome\":\"Seu Nome\",\"email\":\"seu@email.com\",\"senha\":\"123456\"}"
+Invoke-RestMethod -Uri "http://localhost:3000/api/usuarios" `
+  -Method POST `
+  -Headers @{ "Content-Type" = "application/json" } `
+  -Body '{"nome":"Seu Nome","email":"seu@email.com","senha":"123456"}'
 ```
 
 Se der certo, o terminal mostra: `{"mensagem":"Usuário cadastrado!","id":1}`
