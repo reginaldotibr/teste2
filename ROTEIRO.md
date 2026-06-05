@@ -37,7 +37,22 @@ New-Item -ItemType Directory -Force -Path "public"
 
 — Criar todos os arquivos
 ```bash
-New-Item -ItemType File -Path "server.js" New-Item -ItemType File -Path "db.js" New-Item -ItemType File -Path ".env" New-Item -ItemType File -Path "src\models\tarefaModel.js" New-Item -ItemType File -Path "src\models\usuarioModel.js" New-Item -ItemType File -Path "src\controllers\tarefaController.js" New-Item -ItemType File -Path "src\controllers\usuarioController.js" New-Item -ItemType File -Path "src\controllers\authController.js" New-Item -ItemType File -Path "src\routes\tarefasRoutes.js" New-Item -ItemType File -Path "src\routes\usuariosRoutes.js" New-Item -ItemType File -Path "src\routes\authRoutes.js" New-Item -ItemType File -Path "src\routes\viewRoutes.js" New-Item -ItemType File -Path "src\middlewares\authMiddleware.js" New-Item -ItemType File -Path "src\views\layout.ejs" New-Item -ItemType File -Path "src\views\login.ejs" New-Item -ItemType File -Path "src\views\tarefas\index.ejs" New-Item -ItemType File -Path "src\views\tarefas\form.ejs" New-Item -ItemType File -Path "src\prisma\client.js"
+New-Item -ItemType File -Path "server.js"
+New-Item -ItemType File -Path "src\models\tarefaModel.js"
+New-Item -ItemType File -Path "src\models\usuarioModel.js"
+New-Item -ItemType File -Path "src\controllers\tarefaController.js"
+New-Item -ItemType File -Path "src\controllers\usuarioController.js"
+New-Item -ItemType File -Path "src\controllers\authController.js"
+New-Item -ItemType File -Path "src\routes\tarefasRoutes.js"
+New-Item -ItemType File -Path "src\routes\usuariosRoutes.js"
+New-Item -ItemType File -Path "src\routes\authRoutes.js"
+New-Item -ItemType File -Path "src\routes\viewRoutes.js"
+New-Item -ItemType File -Path "src\middlewares\authMiddleware.js"
+New-Item -ItemType File -Path "src\views\layout.ejs"
+New-Item -ItemType File -Path "src\views\login.ejs"
+New-Item -ItemType File -Path "src\views\tarefas\index.ejs"
+New-Item -ItemType File -Path "src\views\tarefas\form.ejs"
+New-Item -ItemType File -Path "src\prisma\client.js"
 ```
 
 
