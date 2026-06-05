@@ -25,7 +25,7 @@ code .
 
 
 Criar toda a estrutura de pastas
-
+```bash
 New-Item -ItemType Directory -Force -Path "src\models" 
 New-Item -ItemType Directory -Force -Path "src\controllers" 
 New-Item -ItemType Directory -Force -Path "src\routes" 
@@ -33,7 +33,7 @@ New-Item -ItemType Directory -Force -Path "src\middlewares"
 New-Item -ItemType Directory -Force -Path "src\views\tarefas" 
 New-Item -ItemType Directory -Force -Path "src\prisma" 
 New-Item -ItemType Directory -Force -Path "public"
-
+```
 
 
 
