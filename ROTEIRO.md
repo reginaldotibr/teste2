@@ -161,6 +161,11 @@ model Tarefa {
 
 ## PASSO 8 — Criar as tabelas no banco
 
+Apagar caso exista
+```bash
+npx prisma migrate reset
+```
+Criar
 ```bash
 npx prisma migrate dev --name criar_tabelas_iniciais
 ```
